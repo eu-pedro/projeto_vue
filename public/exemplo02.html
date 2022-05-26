@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Exemplo  Vue 2</title>
+    <style>
+        img{
+            width: 500px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <section id="app">
+        <h1>
+            Bem vindo {{fulano}}
+        </h1>
+        <!-- A DIRETIVA(ATRIBUTO PERSONALIZADO) 'V-TEXT' MOSTRA APENAS UM TEXTO NA TAG TODA -->
+        <p v-text="fulano"></p>
+        <p v-html="texto"></p>
+        
+        <!-- A DIRETIVA 'V-BIND' PERMITE FAZER LIGAÇÃO DE ATRIBUTOS EXISTENTES NO HTML COM VARIÁVEIS DO VUE -->
+
+        <!-- Primeira Imagem -->
+        <img v-bind:src="imagem" alt="">
+
+        <!-- Segunda Imagem -->
+        <img v-bind:src="imagem2" alt="">
+
+        <!-- Terceira Imagem -->
+        <img v-bind:src="imagem3" alt="">
+    </section>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return{
+                    fulano: 'João',
+                    texto: "<strong> Desenvolvedor Full-Stack</strong>",
+                    imagem: "https://images.pexels.com/photos/707046/pexels-photo-707046.jpeg?cs=srgb&dl=pexels-trace-constant-707046.jpg&fm=jpg",
+                    imagem2: "https://images.pexels.com/photos/11950172/pexels-photo-11950172.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+                    imagem3: "https://images.pexels.com/photos/2627945/pexels-photo-2627945.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                }
+
+            }
+        })
+
+        app.mount('#app')
+    </script>
+</body>
+</html>
