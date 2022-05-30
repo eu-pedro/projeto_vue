@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo Vue 3</title>
+
+    <style>
+        img{width:200px;}
+    </style>
+</head>
+<body>
+    <section id="app">
+        <form action="">
+            <input type="text" v-model="digitado">
+            <p> {{ digitado }} </p>
+        </form>
+
+        <!-- A DIRETIVA v-if, v-else-if e v-else  SERVEM PARA EXIBIR INFORMAÇÕES CONDICIONAIS -->
+        <section v-if="digitado == 1">
+            <img v-bind:src="img1" alt="">
+        </section>
+
+        <section v-else-if="digitado == 2">
+            <img :src="img2" alt="">
+        </section>
+
+        <section v-else-if="digitado == 3">
+            <img :src="img3" alt="">
+        </section>
+
+        <p v-else>
+            Por favor, informe um valor entre 1 e 3 para escolher uma imagem
+        </p>
+
+    </section>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return{
+                    digitado:'',
+                    img1:'imagens/imagem1.webp',
+                    img2:'imagens/imagem2.jpg',
+                    img3:'imagens/imagem3.jpg'
+                }
+            }
+        })
+
+        app.mount("#app")
+    </script>
+</body>
+</html>

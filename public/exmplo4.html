@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 4 Vue</title>
+</head>
+<body>
+    <section id="app">
+        <div v-for="itens in imagem">
+            <img :src="itens" alt="" style="width:200px;">
+        </div>
+        <hr>
+        <p v-for="(elementos, indice) in frutas">
+            {{indice + 1}} - {{ elementos }}
+        </p>
+        <hr>
+
+        <p v-for="elementos in eletro">
+            {{ elementos }}
+        </p>
+
+        <hr>
+
+        <p v-for="(valor, chave) in pessoa">
+             {{valor}} 
+        </p>
+        <hr>
+
+        <p v-for="elementos in carros">
+            {{ elementos.marca }}: {{ elementos.modelo}}
+        </p>
+
+        <hr>
+
+        <p v-for="cont in 10">
+            {{ cont }}
+        </p>
+
+    </section>
+    
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+        const app= Vue.createApp({
+            data(){
+                return{
+                    imagem:[
+                        'imagens/imagem1.webp',
+                        'imagens/imagem2.jpg',
+                        'imagens/imagem3.jpg'
+                    ], 
+                    frutas:['Maçã', 'Morango', 'Laranja', 'Uva'],
+                    eletro:[
+                        'Geladeira',
+                        'Air Fryer',
+                        'Liquidificador',
+                        'Microondas'
+                    ],
+                    // TRABALHANDO COM OBJETO
+                    pessoa:{
+                        nome:"Beltrano José",
+                        idade: 56,
+                        endereco: "Rua dos alfeneiros"
+                    },
+                    // VETOR DE OBJETOS
+                    carros:[
+                      {marca: "Porsche", modelo:911},
+                      {marca: "Fiat", modelo: "Pálio"},
+                      {marca: "Volkswagen", modelo:"Gol G6"},
+                    ]
+
+
+                }
+            }
+        })
+
+        app.mount("#app")
+    </script>
+</body>
+</html>
