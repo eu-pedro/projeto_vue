@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 6 Vue</title>
+    <style>
+        *{
+            margin: 0 auto;
+            padding: 0;
+        }
+        .escuro{
+            background-color: #101010;
+            color: #F6EFE8;
+        }
+        .claro{
+            background-color: #F6EFE8;
+            color: #101010;
+        }
+        .escuro, .claro{
+            font-family: arial;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <section id="app">
+        <section class="claro">
+            <input type="checkbox" id="tema" @change="mudarTema()">
+            <label for="tema">Mudar tema</label>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nostrum voluptas ratione eveniet nobis pariatur iusto illum enim ut harum neque nam quas maiores, laudantium optio ullam culpa vero. Minima?
+                Beatae eos quibusdam accusamus, veniam nesciunt quas, in magni, placeat aliquid quae sint ipsam earum doloribus incidunt odit maiores quaerat maxime numquam illo aliquam ab eveniet? Eveniet dolorem repudiandae ducimus?
+                Rerum sit iste unde explicabo enim sunt, magni possimus natus veritatis optio eum voluptates, iusto alias asperiores quis, dolor itaque molestias omnis debitis. Laborum illo, sunt ducimus nam excepturi hic?
+                Libero excepturi rerum praesentium sit pariatur enim, tempore cum veniam unde? A repudiandae cum ducimus deleniti magni assumenda aperiam tempore eligendi pariatur numquam, saepe exercitationem vitae quis neque ullam doloribus!
+                Eius impedit in veniam delectus, sapiente, ut quod iste obcaecati quibusdam ab id inventore eligendi. Ut voluptate doloribus facilis expedita. Sapiente consequuntur exercitationem quidem placeat velit laudantium fugit iste ipsa.
+
+            </p>
+        </section>
+
+    </section>
+
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script>
+        const app = Vue.createApp({
+             data(){
+                 return{
+                     escolha: true,
+                 }
+             },
+            methods:{
+                mudarTema(){
+                    this.escolha = !this.escolha // ESTOU TROCANDO OS VALORES TRUE E FALSE UTILIZANDO O OPERADOR DE NEGAÇÃO
+                    console.log(this.escolha)
+                }
+            }
+        })
+        
+
+        app.mount('#app')
+    </script>
+</body>
+</html>
