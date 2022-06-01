@@ -6,7 +6,7 @@
     <title>Exemplo 6 Vue</title>
     <style>
         *{
-            margin: 0 auto;
+            margin: 0;
             padding: 0;
         }
         .escuro{
@@ -25,7 +25,9 @@
 </head>
 <body>
     <section id="app">
-        <section class="claro">
+        <!-- Quando fazemos um "v-bind" na class, temos que colocar a classe css do lado esquerdo e uma variável que será testada (verdadeiro ou falso) do lado direito. Se for verdade, ela exibe, caso não, ela não exibirá -->
+        <!-- OPERADOR TERNÁRIO: test?true:false -->
+        <section v-bind:class="[escolha?'claro':'escuro']">
             <input type="checkbox" id="tema" @change="mudarTema()">
             <label for="tema">Mudar tema</label>
 
