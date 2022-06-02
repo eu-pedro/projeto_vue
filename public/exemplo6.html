@@ -2,66 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Exemplo 6 Vue</title>
+
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        .escuro{
-            background-color: #101010;
-            color: #F6EFE8;
-        }
-        .claro{
-            background-color: #F6EFE8;
-            color: #101010;
-        }
-        .escuro, .claro{
-            font-family: arial;
-            height: 100vh;
-        }
+        *{margin:0; padding:0;}
+        .escuro{background-color: #101010; color:#F6EFE8;}
+        .claro{background-color: #F6EFE8; color:#101010;}
+        .escuro, .claro{font-family: arial; height:100vh;}
     </style>
 </head>
 <body>
     <section id="app">
-        <!-- Quando fazemos um "v-bind" na class, temos que colocar a classe css do lado esquerdo e uma variável que será testada (verdadeiro ou falso) do lado direito. Se for verdade, ela exibe, caso não, ela não exibirá -->
-        <!-- OPERADOR TERNÁRIO: test?true:false -->
-        <section v-bind:class="[escolha?'claro':'escuro']">
+        <section class="claro">
             <input type="checkbox" id="tema" @change="mudarTema()">
-            <label for="tema">Mudar tema</label>
+            <label for="tema">Mudar Tema</label>
 
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde nostrum voluptas ratione eveniet nobis pariatur iusto illum enim ut harum neque nam quas maiores, laudantium optio ullam culpa vero. Minima?
-                Beatae eos quibusdam accusamus, veniam nesciunt quas, in magni, placeat aliquid quae sint ipsam earum doloribus incidunt odit maiores quaerat maxime numquam illo aliquam ab eveniet? Eveniet dolorem repudiandae ducimus?
-                Rerum sit iste unde explicabo enim sunt, magni possimus natus veritatis optio eum voluptates, iusto alias asperiores quis, dolor itaque molestias omnis debitis. Laborum illo, sunt ducimus nam excepturi hic?
-                Libero excepturi rerum praesentium sit pariatur enim, tempore cum veniam unde? A repudiandae cum ducimus deleniti magni assumenda aperiam tempore eligendi pariatur numquam, saepe exercitationem vitae quis neque ullam doloribus!
-                Eius impedit in veniam delectus, sapiente, ut quod iste obcaecati quibusdam ab id inventore eligendi. Ut voluptate doloribus facilis expedita. Sapiente consequuntur exercitationem quidem placeat velit laudantium fugit iste ipsa.
-
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facilis modi fuga ipsum suscipit repudiandae rem veniam magni odit odio id velit eaque nisi eius itaque officiis recusandae, consectetur placeat! Iusto?
+                Error, deleniti quibusdam laudantium debitis quo temporibus aut, enim iure autem qui tenetur? Eos libero, fugiat impedit aut odio nihil ipsum eaque dolorum. Veritatis velit ipsa architecto earum reiciendis quidem.
+                Dicta corporis, voluptas omnis laudantium ratione consectetur quod tenetur quaerat maxime sapiente laborum fuga similique nulla. Inventore nostrum placeat molestias, accusantium sit nihil, accusamus fuga est eaque error autem reiciendis.
+                Voluptates amet quam sapiente autem nisi dolorem odit quibusdam minima eligendi tenetur officiis omnis quisquam, in iste nam totam incidunt eaque sed. Quasi dicta error repellendus ipsum minima inventore sapiente?
+                Repellendus numquam asperiores, eum explicabo iste expedita optio nemo quae corrupti perspiciatis quaerat incidunt laborum ab architecto in commodi, sit recusandae alias officia cumque aut labore voluptatem delectus facere? Tenetur.
             </p>
+
+
         </section>
 
-    </section>
-
+    </section>   
 
     <script src="https://unpkg.com/vue@3"></script>
     <script>
         const app = Vue.createApp({
-             data(){
-                 return{
-                     escolha: true,
-                 }
-             },
+            data(){
+                return{
+                    escolha:true
+                }
+            },
             methods:{
                 mudarTema(){
-                    this.escolha = !this.escolha // ESTOU TROCANDO OS VALORES TRUE E FALSE UTILIZANDO O OPERADOR DE NEGAÇÃO
+                    this.escolha = !this.escolha// estou trocando os valores true e false utilizando o operador de negação pra isso
                     console.log(this.escolha)
                 }
             }
         })
-        
 
-        app.mount('#app')
+        app.mount("#app")
     </script>
 </body>
 </html>
