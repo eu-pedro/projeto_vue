@@ -37,6 +37,8 @@ const app = Vue.createApp({
                 if(itens == elementos){
                     this.bloco[elementos] = true
                     this.textoInicial = this.mensagem[elementos]
+                    this.resultado = '' // RESETANDO AS INFORMAÇOES
+                    this.info = '' 
                 }
                 else{
                     this.bloco[elementos] = false
