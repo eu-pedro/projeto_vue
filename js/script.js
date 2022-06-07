@@ -22,6 +22,8 @@ const app = Vue.createApp({
             cotacao:'',
             data: '',
             statusTooltip: false, // VERIFICAR SE O TOOLTIP JÁ FOI ATIVADO
+            valor: '',
+            porcentagem: '',
         }
     },
     methods:{
@@ -95,6 +97,17 @@ const app = Vue.createApp({
                 this.statusTooltip = true
             }
             
+        },
+        calcularPercentual(){
+            let padrao = /^[0-9]+(\.([0-9]{2}))?$/
+            if(padrao.test(this.valor) && padrao.test(this.porcentagem)){
+                let resposta = this.valor * (this.porcentagem / 100)
+                this.resultado = `${this.porcentagem}% de ${this.valor} é igual a ${resposta}`
+                this.info = ""
+            }else{
+                this.info = "Informe apenas números inteiros ou separados por ponto com 2 casas decimais"
+                this.resultado = ""
+            }
         }
         
     }
